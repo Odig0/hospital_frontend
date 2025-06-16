@@ -25,3 +25,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOSPITAL_2AE25 }}
           projectId: hospital-2ae25
+          channelId: live  # <-- ESTA ES LA CLAVE MAESTRA 🔑
