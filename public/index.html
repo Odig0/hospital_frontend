@@ -1,127 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendario Simple</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f4f4f4;
-    }
-    .calendar {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .calendar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .calendar-header button {
-      padding: 5px 10px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      text-align: center;
-      padding: 10px;
-      border: 1px solid #ddd;
-    }
-    th {
-      background-color: #f0f0f0;
-    }
-    td:hover {
-      background-color: #eee;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Montalvo</title>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-
-  <div class="calendar">
-    <div class="calendar-header">
-      <button id="prev">◀</button>
-      <h2 id="month-year"></h2>
-      <button id="next">▶</button>
+    <nav>
+        <a href="/index.html"><img src="/img/Logo-blanco.png" alt="La imagen no se encuentra disponible"></a>
+    </nav>
+    <div class="form-wrapper">
+        <h2>Iniciar Sesión</h2>
+        <form action="#">
+            <div class="form-control">
+                <input type="text" required maxlength="10">
+                <label>Usuario</label>
+            </div>
+            <div class="form-control">
+                <input type="password" required maxlength="10">
+                <label>Contraseña</label>
+            </div>
+            <button type="submit">Acceder</button>
+        </form>
     </div>
-    <table id="calendar-body">
-
-      <h1>proyecto de calidad y prueba de software</h1>
-
-    </table>
-  </div>
-
-  <script>
-    const monthNames = [
-      "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-      "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-    ];
-
-    let today = new Date();
-    let currentMonth = today.getMonth();
-    let currentYear = today.getFullYear();
-
-    const monthYear = document.getElementById("month-year");
-    const calendarBody = document.getElementById("calendar-body");
-
-    function renderCalendar(month, year) {
-      monthYear.textContent = `${monthNames[month]} ${year}`;
-
-      let firstDay = new Date(year, month).getDay();
-      let daysInMonth = 32 - new Date(year, month, 32).getDate();
-
-      let table = "<tr>";
-      const daysOfWeek = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
-      for (let day of daysOfWeek) {
-        table += `<th>${day}</th>`;
-      }
-      table += "</tr><tr>";
-
-      let dayOfWeek = firstDay === 0 ? 6 : firstDay - 1; // Ajuste para que lunes sea el primero
-      for (let i = 0; i < dayOfWeek; i++) {
-        table += "<td></td>";
-      }
-
-      for (let day = 1; day <= daysInMonth; day++) {
-        table += `<td>${day}</td>`;
-        if ((day + dayOfWeek) % 7 === 0) {
-          table += "</tr><tr>";
-        }
-      }
-      table += "</tr>";
-      calendarBody.innerHTML = table;
-    }
-
-    document.getElementById("prev").addEventListener("click", () => {
-      currentMonth--;
-      if (currentMonth < 0) {
-        currentMonth = 11;
-        currentYear--;
-      }
-      renderCalendar(currentMonth, currentYear);
-    });
-
-    document.getElementById("next").addEventListener("click", () => {
-      currentMonth++;
-      if (currentMonth > 11) {
-        currentMonth = 0;
-        currentYear++;
-      }
-      renderCalendar(currentMonth, currentYear);
-    });
-
-    renderCalendar(currentMonth, currentYear);
-  </script>
-
 </body>
 </html>
