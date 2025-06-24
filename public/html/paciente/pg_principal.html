@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Montalvo - Paciente</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/">
+</head>
+<body>
+    <header class="header">
+        <a href="/html/medico/pg_principal.html" class="logo">
+            <img src="/img/Logo-blanco.png" class="logo" alt="">
+        </a>
+        <input type="checkbox" id="side-menu" class="side-menu">
+        <label for="side-menu" class="hamb"><span class="hamb-line"></span></label>
+        <nav class="nav">
+            <ul class="menu">
+                <li><a href="#">Consultas Pendientes</a></li>
+                <li><a href="#">Pagos</a></li>
+                <li><a href="#">Historia Clínica</a></li>
+                <li><a href="#">Cerrar Sesión</a></li>
+                <li><a href="#" class="cuenta">Mi cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Consultas Pendientes</h1>
+            <form action="">
+                <div class="buscador">
+                  <div>
+                    <label for="" class="filtro"> Laboratorio <input type="checkbox"> </label>
+                  </div>
+  
+                  <div>
+                    <label for="" class="filtro"> De: <input type="date"> </label>
+                  </div>
+  
+                  <div>
+                    <label for="" class="filtro"> Hasta: <input type="date"> </label>
+                  </div>
+  
+                  <div>
+                    <label for="" class="filtro"> <input type="text" maxlength="40" class="box" placeholder="Inserte el código o especialidad..." > </label>
+                  </div>
+  
+                  <div>
+                    <button class="filtro">Buscar</button>
+                  </div>
+                </div>
+            </form>
+            <table role="table">
+                <thead role="rowgroup">
+                  <tr role="row">
+                    <th role="columnheader">#</th>
+                    <th role="columnheader">Código</th>
+                    <th role="columnheader">Especialidad</th>
+                    <th role="columnheader">Fecha</th>
+                    <th role="columnheader">Hora</th>
+                    <th role="columnheader">Laboratorio</th>
+                    <th role="columnheader">Estado</th>
+                    <th role="columnheader">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody role="rowgroup">
+                  <tr role="row">
+                    <td role="cell">1</td>
+                    <td role="cell">12345</td>
+                    <td role="cell">Pediatría</td>
+                    <td role="cell">01/01/2025</td>
+                    <td role="cell">14:10</td>
+                    <td role="cell">No</td>
+                    <td role="cell">Por Pagar</td>
+                    <td role="cell">
+                      <a href="" class="btn_ver">Ver</a>
+                      <a href="" class="btn_reprog">Reprogramar</a>
+                    </td>
+                  </tr>
+                  <tr role="row">
+                    <td role="cell">1</td>
+                    <td role="cell">12345</td>
+                    <td role="cell">Pediatría</td>
+                    <td role="cell">01/01/2025</td>
+                    <td role="cell">14:10</td>
+                    <td role="cell">No</td>
+                    <td role="cell">Por Pagar</td>
+                    <td role="cell">
+                      <a href="" class="btn_ver">Ver</a>
+                      <a href="" class="btn_reprog">Reprogramar</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+    </main>
+</body>
+</html>
