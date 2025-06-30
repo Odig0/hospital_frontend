@@ -1,97 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Montalvo - Paciente</title>
-    <link rel="stylesheet" href="/css/menu.css">
-    <link rel="stylesheet" href="/css/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paciente - Consultas Pendientes</title>
+  <link rel="stylesheet" href="/css/menu.css" />
 </head>
 <body>
-    <header class="header">
-        <a href="/html/medico/pg_principal.html" class="logo">
-            <img src="/img/Logo-blanco.png" class="logo" alt="">
-        </a>
-        <input type="checkbox" id="side-menu" class="side-menu">
-        <label for="side-menu" class="hamb"><span class="hamb-line"></span></label>
-        <nav class="nav">
-            <ul class="menu">
-                <li><a href="#">Consultas Pendientes</a></li>
-                <li><a href="#">Pagos</a></li>
-                <li><a href="#">Historia Clínica</a></li>
-                <li><a href="#">Cerrar Sesión</a></li>
-                <li><a href="#" class="cuenta">Mi cuenta</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="header">
+    <a href="/html/paciente/pg_principal.html" class="logo">
+      <img src="/img/Logo-blanco.png" class="logo" alt="" />
+    </a>
+    <input type="checkbox" id="side-menu" class="side-menu" />
+    <label for="side-menu" class="hamb"><span class="hamb-line"></span></label>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="/html/paciente/pg_principal.html" class="seleccionado">Consultas Pendientes</a></li>
+        <li><a href="/html/paciente/pg_pagos.html">Pagos</a></li>
+        <li><a href="/html/paciente/pg_historia.html">Historia Clínica</a></li>
+        <li><a href="#cerrar_sesion" id="btn-cerrar-sesion">Cerrar Sesión</a></li>
+        <li><a href="#" class="cuenta">Mi cuenta</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <h1>Consultas Pendientes</h1>
-            <form action="">
-                <div class="buscador">
-                  <div>
-                    <label for="" class="filtro"> Laboratorio <input type="checkbox"> </label>
-                  </div>
-  
-                  <div>
-                    <label for="" class="filtro"> De: <input type="date"> </label>
-                  </div>
-  
-                  <div>
-                    <label for="" class="filtro"> Hasta: <input type="date"> </label>
-                  </div>
-  
-                  <div>
-                    <label for="" class="filtro"> <input type="text" maxlength="40" class="box" placeholder="Inserte el código o especialidad..." > </label>
-                  </div>
-  
-                  <div>
-                    <button class="filtro">Buscar</button>
-                  </div>
-                </div>
-            </form>
-            <table role="table">
-                <thead role="rowgroup">
-                  <tr role="row">
-                    <th role="columnheader">#</th>
-                    <th role="columnheader">Código</th>
-                    <th role="columnheader">Especialidad</th>
-                    <th role="columnheader">Fecha</th>
-                    <th role="columnheader">Hora</th>
-                    <th role="columnheader">Laboratorio</th>
-                    <th role="columnheader">Estado</th>
-                    <th role="columnheader">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody role="rowgroup">
-                  <tr role="row">
-                    <td role="cell">1</td>
-                    <td role="cell">12345</td>
-                    <td role="cell">Pediatría</td>
-                    <td role="cell">01/01/2025</td>
-                    <td role="cell">14:10</td>
-                    <td role="cell">No</td>
-                    <td role="cell">Por Pagar</td>
-                    <td role="cell">
-                      <a href="" class="btn_ver">Ver</a>
-                      <a href="" class="btn_reprog">Reprogramar</a>
-                    </td>
-                  </tr>
-                  <tr role="row">
-                    <td role="cell">1</td>
-                    <td role="cell">12345</td>
-                    <td role="cell">Pediatría</td>
-                    <td role="cell">01/01/2025</td>
-                    <td role="cell">14:10</td>
-                    <td role="cell">No</td>
-                    <td role="cell">Por Pagar</td>
-                    <td role="cell">
-                      <a href="" class="btn_ver">Ver</a>
-                      <a href="" class="btn_reprog">Reprogramar</a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-    </main>
+  <main>
+    <h1>Consultas Pendientes</h1>
+
+    <form action="">
+      <div class="buscador">
+        <div>
+          <label class="filtro">Laboratorio <input type="checkbox" /></label>
+        </div>
+        <div>
+          <label class="filtro">De: <input type="date" /></label>
+        </div>
+        <div>
+          <label class="filtro">Hasta: <input type="date" /></label>
+        </div>
+        <div>
+          <label class="filtro">
+            <input type="text" maxlength="40" class="box" placeholder="Inserte el código o especialidad..." />
+          </label>
+        </div>
+        <div>
+          <button class="filtro">Buscar</button>
+        </div>
+      </div>
+    </form>
+
+    <table role="table">
+      <thead role="rowgroup">
+        <tr role="row">
+          <th role="columnheader">#</th>
+          <th role="columnheader">Código</th>
+          <th role="columnheader">Especialidad</th>
+          <th role="columnheader">Fecha</th>
+          <th role="columnheader">Hora</th>
+          <th role="columnheader">Laboratorio</th>
+          <th role="columnheader">Estado</th>
+          <th role="columnheader">Acciones</th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        <tr role="row">
+          <td role="cell">1</td>
+          <td role="cell">12345</td>
+          <td role="cell">Pediatría</td>
+          <td role="cell">01/01/2025</td>
+          <td role="cell">14:10</td>
+          <td role="cell">No</td>
+          <td role="cell">Por Pagar</td>
+          <td role="cell">
+            <a href="#ver" class="btn_ver">Ver</a>
+            <a href="#reprogramar" class="btn_reprog">Reprogramar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <!-- Modal: Cerrar sesión -->
+  <div id="cerrar_sesion" class="modal">
+    <div class="modalbox movedown">
+      <h2>Cerrar Sesión</h2>
+      <p>¿Está seguro que desea cerrar la sesión?</p>
+      <div class="botones">
+        <a href="#" class="btn_aceptar">Aceptar</a>
+        <a href="#" class="btn_cancelar">Cancelar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Confirmar reprogramación -->
+  <div id="confirmacion" class="modal">
+    <div class="modalbox movedown">
+      <h2>Confirmar Reprogramación</h2>
+      <p>¿Está seguro que desea reprogramar su consulta?</p>
+      <div class="botones">
+        <a href="#" class="btn_aceptar">Aceptar</a>
+        <a href="#" class="btn_cancelar">Cancelar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Ver detalles -->
+  <div id="ver" class="modal">
+    <div class="modalbox movedown">
+      <div class="modal-scroll">
+        <h2>Detalles de la Consulta</h2>
+        <div class="formulario_ver">
+          <div class="campo-grupo">
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" readonly />
+          </div>
+          <div class="campo-grupo">
+            <label for="especialidad">Especialidad:</label>
+            <input type="text" id="especialidad" readonly />
+          </div>
+          <div class="campo-grupo">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" readonly />
+          </div>
+          <div class="campo-grupo">
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" readonly />
+          </div>
+          <div class="campo-grupo">
+            <label for="laboratorio">Laboratorio:</label>
+            <input type="text" id="laboratorio" readonly />
+          </div>
+          <div class="campo-grupo">
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" readonly />
+          </div>
+          <div class="campo-grupo">
+            <label for="monto">Monto (Bs.):</label>
+            <input type="number" id="monto" readonly />
+          </div>
+          <div class="campo-grupo">
+            <label for="observaciones">Observaciones:</label>
+            <textarea id="observaciones" readonly></textarea>
+          </div>
+          <div class="botones">
+            <a href="#" class="btn_pagar">Pagar</a>
+            <a href="#reprogramar" class="btn_reprog">Reprogramar</a>
+            <a href="#" class="btn_cancelar">Cerrar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Reprogramar consulta -->
+  <div id="reprogramar" class="modal">
+    <div class="modalbox movedown">
+      <h2>Reprogramar</h2>
+      <form class="formulario_ver">
+        <div class="campo-grupo">
+          <label for="codigo">Código:</label>
+          <input type="text" id="codigo" readonly />
+        </div>
+        <div class="campo-grupo">
+          <label for="consulta">Consulta:</label>
+          <input type="text" id="consulta" readonly />
+        </div>
+        <div class="campo-grupo">
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" />
+        </div>
+        <div class="campo-grupo">
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" />
+        </div>
+        <div class="botones">
+          <a href="#confirmacion" class="btn_aceptar">Aceptar</a>
+          <a href="#" class="btn_cancelar">Cerrar</a>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
