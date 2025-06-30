@@ -68,7 +68,7 @@ a .logo {
   background-color: #3d4155;
 }
 
-.cuenta {
+.seleccionado {
   background-color: #1d202c;
 }
 
@@ -129,20 +129,20 @@ a .logo {
 
 @media (min-width: 1000px) {
   .nav {
-      max-height: none;
-      top: 0;
-      position: relative;
-      float: right;
-      width: fit-content;
-      background-color: transparent;
+    max-height: none;
+    top: 0;
+    position: relative;
+    float: right;
+    width: fit-content;
+    background-color: transparent;
   }
 
   .menu li {
-      float: left;
+    float: left;
   }
 
   .hamb {
-      display: none;
+    display: none;
   }
 }
 
@@ -166,37 +166,13 @@ tr:hover {
   background-color: #cacddd;
 }
 
-table .btn_ver {
-  background: #15ff00;
-  color: black;
-  padding: 2px 43px;
-  border-radius: 7px;
-  margin: 2px;
-}
-
-table .btn_ver:hover {
-  background: #88ff00;
-}
-
-table .btn_reprog {
-  background: #ffae00;
-  color: black;
-  padding: 2px 8px;
-  border-radius: 7px;
-  margin: 2px;
-}
-
-table .btn_reprog:hover {
-  background: #ffd900;
-}
-
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   h1 {
-      font-size: 35px;
+    font-size: 35px;
   }
 
   tr:hover {
-      background-color: transparent;
+    background-color: transparent;
   }
 
   table,
@@ -205,82 +181,63 @@ table .btn_reprog:hover {
   th,
   td,
   tr {
-      display: block;
+    display: block;
   }
 
   thead tr {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
 
   tr {
-      margin: 0 0 1rem 0;
+    margin: 0 0 1rem 0;
   }
 
   tr:nth-child(odd) {
-      background: #d3e5e7;
+    background: #d3e5e7;
   }
 
   td {
-      border: none;
-      border-bottom: 1px solid #c3caca;
-      position: relative;
-      padding-left: 50%;
+    border: none;
+    border-bottom: 1px solid #c3caca;
+    position: relative;
+    padding-left: 50%;
   }
 
   td:before {
-      position: absolute;
-      top: 0;
-      left: 15px;
-      width: 45%;
-      padding-right: 10px;
-      white-space: nowrap;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
   }
 
-  td:nth-of-type(1):before {
-      content: "#";
-  }
-
-  td:nth-of-type(2):before {
-      content: "Código";
-  }
-
-  td:nth-of-type(3):before {
-      content: "Especialidad";
-  }
-
-  td:nth-of-type(4):before {
-      content: "Fecha";
-  }
-
-  td:nth-of-type(5):before {
-      content: "Hora";
-  }
-
-  td:nth-of-type(6):before {
-      content: "Laboratorio";
-  }
-
-  td:nth-of-type(7):before {
-      content: "Estado";
-  }
-
-  td:nth-of-type(8):before {
-      content: "Acciones";
-  }
+  td:nth-of-type(1):before { content: "#"; }
+  td:nth-of-type(2):before { content: "Código"; }
+  td:nth-of-type(3):before { content: "Especialidad"; }
+  td:nth-of-type(4):before { content: "Fecha"; }
+  td:nth-of-type(5):before { content: "Hora"; }
+  td:nth-of-type(6):before { content: "Laboratorio"; }
+  td:nth-of-type(7):before { content: "Estado"; }
+  td:nth-of-type(8):before { content: "Acciones"; }
 
   form .buscador div {
-      width: 90%;
-      margin: 10px 20px 15px 0;
+    width: 90%;
+    margin: 10px 20px 15px 0;
   }
 
   form .buscador .filtro .box {
-      width: 80%;
+    width: 80%;
   }
 
   form .buscador input {
-      margin-left: 20px;
+    margin-left: 20px;
+  }
+
+  .modalbox {
+    width: 60%;
   }
 }
 
@@ -302,4 +259,189 @@ table .btn_reprog:hover {
   border-bottom: 2px solid #2b2e3c;
   width: 420px;
   padding-left: 5px;
+}
+
+.modal {
+  position: fixed;
+  font-family: Arial, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #2b2e3cb2;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalbox {
+  width: 500px;
+  overflow: hidden;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  transition: all 500ms ease-in;
+}
+
+.modal-scroll {
+  overflow-y: auto;
+  padding-right: 10px;
+  flex: 1;
+}
+
+.modal:target .movedown {
+  margin: 1% auto;
+}
+
+.modal h2,
+.modal p,
+.modal .botones {
+  margin: 10px;
+}
+
+.modal .botones {
+  text-align: right;
+}
+
+.btn_aceptar {
+  background: #0ea500;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 2px;
+  color: #f9f9f9;
+}
+
+.btn_aceptar:hover {
+  background: #3bd82c;
+}
+
+.btn_cancelar {
+  background: #ff1e00;
+  border-radius: 5px;
+  padding: 8px;
+  text-decoration: none;
+  color: #f9f9f9;
+}
+
+.btn_cancelar:hover {
+  background: #ff4026;
+}
+
+.btn_ver {
+  background: #0d9700;
+  color: #f9f9f9;
+  padding: 3px 43px;
+  border-radius: 7px;
+  margin: 2px;
+}
+
+.btn_ver:hover {
+  background: #11ca00;
+}
+
+.btn_reprog {
+  background: #ad4e00;
+  color: #f9f9f9;
+  padding: 3px 8px;
+  border-radius: 7px;
+  margin: 2px;
+}
+
+.btn_reprog:hover {
+  background: #d66000;
+}
+
+.btn_cobrar {
+  background: #01306e;
+  color: #f9f9f9;
+  padding: 3px 30px;
+  border-radius: 7px;
+  margin: 2px;
+}
+
+.btn_cobrar:hover {
+  background: #0053be;
+}
+
+.btn_derivar {
+  background: #8f4101;
+  color: #f9f9f9;
+  padding: 3px 30px;
+  border-radius: 7px;
+  margin: 2px;
+}
+
+.btn_derivar:hover {
+  background: #c05600;
+}
+
+.btn_finalizar {
+  background: #800060;
+  color: #f9f9f9;
+  padding: 3px 25px;
+  border-radius: 7px;
+  margin: 2px;
+}
+
+.btn_finalizar:hover {
+  background: #c50094;
+}
+
+.botones .btn_reprog {
+  padding: 8px;
+}
+
+.btn_pagar {
+  background: #31580d;
+  color: #f9f9f9;
+  padding: 8px;
+  border-radius: 7px;
+  margin: 2px;
+}
+
+.btn_pagar:hover {
+  background: #4f970b;
+}
+
+.formulario_ver {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 2px;
+}
+
+.campo-grupo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.campo-grupo label {
+  width: 150px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.campo-grupo input,
+.campo-grupo textarea {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f4fafd;
+  color: #333;
+  resize: none;
+}
+
+textarea {
+  height: 100px;
 }
